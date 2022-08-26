@@ -11,43 +11,40 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight = true;
     private bool isFacingDown = true;
     private Animator _animator;
-    [SerializeField] private Rigidbody2D _rb;
-    private Vector2 _moveDirection;
+    private Rigidbody2D _rb;
+    private Vector2 movement;
 
     void Start()
     {
         money = initMoney;
         _animator = GetComponent<Animator>();
-        //_rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        //Process Inputs
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        //handle inputs
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        _moveDirection = new Vector2(moveX, moveY).normalized;
+        //set animations
+        _animator.SetFloat("Horizontal", movement.x);
+        _animator.SetFloat("Vertical", movement.y);
+        _animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
 
     void FixedUpdate()
     {
-        Move();
+        //move the character
+        transform.position += new Vector3(movement.x, movement.y) * speed * Time.deltaTime;
+        //_rb.MovePosition(_rb.position + movement * speed);
     }
 
     //used to change the character's sprites 
     private void LateUpdate()
     {
         
-    }
-
-    private void Move()
-    {
-        _rb.velocity = new Vector2(_moveDirection.x * speed * Time.deltaTime, _moveDirection.y * speed * Time.deltaTime);
-
-        //set walking animations
-
     }
 
     private void Flip()
