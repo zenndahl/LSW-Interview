@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int initMoney;
     [SerializeField] private int money;
 
-    private bool isFacingRight = true;
-    private bool isFacingDown = true;
     private Animator _animator;
     private Rigidbody2D _rb;
     private Vector2 movement;
@@ -47,11 +45,4 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void Flip()
-    {
-        isFacingRight = !isFacingRight;
-        Vector2 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;
-    }
 }
