@@ -15,7 +15,7 @@ public class Outfit
         RedYellowStripedShirt,
     }
 
-    public static int GetOutfitCost(OutfitType _outfitType)
+    public static int GetCost(OutfitType _outfitType)
     {
         switch (_outfitType)
         {
@@ -30,12 +30,16 @@ public class Outfit
         }
     }
 
-    public static Sprite GetOufitSprite(OutfitType _outfitType)
+    public static Sprite GetSprite(OutfitType _outfitType)
     {
         switch (_outfitType)
         {
             default:
-            case OutfitType.WhiteShirt: return null; //call the correct sprite to show in the shop
+            //call the correct sprite to show in the shop
+            case OutfitType.WhiteShirt: return GameAssets.i.WhiteShirtSprite; 
+            case OutfitType.RedShirt: return GameAssets.i.RedShirtSprite; 
+            case OutfitType.YellowShirt: return GameAssets.i.YellowShirtSprite; 
+            case OutfitType.OrangeShirt: return GameAssets.i.OrangeShirtSprite;
         }
     }
 }

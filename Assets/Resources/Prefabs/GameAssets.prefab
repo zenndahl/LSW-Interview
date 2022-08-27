@@ -44,4 +44,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99577c500c5bc9e4683e34a41bb4daab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WhiteShirtSprite: {fileID: 21300000, guid: bcaa34c2b835e874bae5c9a7f6a095e7, type: 3}
+  RedShirtSprite: {fileID: 21300000, guid: 80fe8052ce5bdab44a81aaaaacc8b8b0, type: 3}
+  OrangeShirtSprite: {fileID: 21300000, guid: 5f3b0268117b7e747b5929093ba5c98b, type: 3}
+  YellowShirtSprite: {fileID: 21300000, guid: ef9da58df795f8342af5683f3fd7c4a5, type: 3}
+  FarmerHat: {fileID: 21300000, guid: 780e24ee24f519f4caca5b1142687b6e, type: 3}
+  RedCirclet: {fileID: 21300000, guid: 58b6123a5ae046046a57aeeb8cf7b180, type: 3}
+  YellowCirclet: {fileID: 21300000, guid: 5868e7311484cdc4ab7bb00b1b2ea98b, type: 3}
+  OrangeCirclet: {fileID: 21300000, guid: 7ac563604f834334f81bdcb94f57eedd, type: 3}
   RedShirtSpritesheet: {fileID: 0}
+  OrangeShirtSpritesheet: {fileID: 0}
+  YellowShirtSpritesheet: {fileID: 0}
+  WhiteShirtRedFlowerSpritesheet: {fileID: 0}
+  RedShirtRedFlowerSpritesheet: {fileID: 0}
+  OrangeShirtRedFlowerSpritesheet: {fileID: 0}
+  YellowShirtRedFlowerSpritesheet: {fileID: 0}
+  WhiteShirtOrangeFlowerSpritesheet: {fileID: 0}
+  RedShirtOrangeFlowerSpritesheet: {fileID: 0}
+  OrangeShirtOrangeFlowerSpritesheet: {fileID: 0}
+  YellowShirtOrangeFlowerSpritesheet: {fileID: 0}
+  WhiteShirtYellowFlowerSpritesheet: {fileID: 0}
+  RedShirtYellowFlowerSpritesheet: {fileID: 0}
+  OrangeShirtYellowFlowerSpritesheet: {fileID: 0}
+  YellowShirtYellowFlowerSpritesheet: {fileID: 0}
+  RedShirtHatSpritesheet: {fileID: 0}
+  OrangeShirtHatSpritesheet: {fileID: 0}
+  YellowShirtHatSpritesheet: {fileID: 0}

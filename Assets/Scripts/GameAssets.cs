@@ -11,7 +11,7 @@ public class GameAssets : MonoBehaviour
         get {
             if (_i == null)
             {
-                _i = (Instantiate(Resources.Load("GameAssets")) as GameObject).GetComponent<GameAssets>();
+                _i = (Instantiate(Resources.Load("Prefabs/GameAssets")) as GameObject).GetComponent<GameAssets>();
             } 
             return _i; 
         }
@@ -22,7 +22,13 @@ public class GameAssets : MonoBehaviour
     public Sprite RedShirtSprite;
     public Sprite OrangeShirtSprite;
     public Sprite YellowShirtSprite;
-    
+
+    [Header("Accessory Assets")]
+    public Sprite FarmerHat;
+    public Sprite RedCirclet;
+    public Sprite YellowCirclet;
+    public Sprite OrangeCirclet;
+
     [Header("Only Shirts Spritesheets")]
     public Sprite RedShirtSpritesheet;
     public Sprite OrangeShirtSpritesheet;

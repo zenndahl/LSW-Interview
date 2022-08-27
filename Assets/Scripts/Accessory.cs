@@ -18,7 +18,7 @@ public class Accessory
         Sunglasses,
     }
 
-    public static int GetAccessoryCost(AccessoryType _accessoryType)
+    public static int GetCost(AccessoryType _accessoryType)
     {
         switch (_accessoryType)
         {
@@ -36,12 +36,34 @@ public class Accessory
         }
     }
 
-    public static Sprite GetAccessorySprite(AccessoryType _accessoryType)
+    public static string GetName(AccessoryType _accessoryType)
     {
         switch (_accessoryType)
         {
             default:
-            case AccessoryType.RedFlowerCirclet: return null; //call the correct sprite to show in the shop
+            case AccessoryType.NoAccessory: return "None";
+            case AccessoryType.FlowersCirclet: return "Flowers Circlet";
+            case AccessoryType.RedFlowerCirclet: return "Red Flower Circlet";
+            case AccessoryType.YellowFlowerCirclet: return "Yellow Flower Circlet";
+            case AccessoryType.OrangeFlowerCirclet: return "Orange Flower Circlet";
+            case AccessoryType.FarmerHat: return "Farmer Hat";
+            //case AccessoryType.RedCap: return "Red Cap";
+            //case AccessoryType.YellowCap: return "Yellow Cap";
+            //case AccessoryType.OrangeCap: return "Orange Cap";
+            //case AccessoryType.Sunglasses: return "Sunglasses;
+        }
+    }
+
+    public static Sprite GetSprite(AccessoryType _accessoryType)
+    {
+        switch (_accessoryType)
+        {
+            default:
+            //call the correct sprite to show in the shop
+            case AccessoryType.RedFlowerCirclet: return GameAssets.i.RedCirclet;
+            case AccessoryType.YellowFlowerCirclet: return GameAssets.i.YellowCirclet;
+            case AccessoryType.OrangeFlowerCirclet: return GameAssets.i.OrangeCirclet;
+            case AccessoryType.FarmerHat: return GameAssets.i.FarmerHat;
         }
     }
 }
