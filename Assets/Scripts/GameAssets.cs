@@ -17,5 +17,39 @@ public class GameAssets : MonoBehaviour
         }
     }
 
+    [Header("Shirts Assets")]
+    public Sprite WhiteShirtSprite;
+    public Sprite RedShirtSprite;
+    public Sprite OrangeShirtSprite;
+    public Sprite YellowShirtSprite;
+    
+    [Header("Only Shirts Spritesheets")]
     public Sprite RedShirtSpritesheet;
+    public Sprite OrangeShirtSpritesheet;
+    public Sprite YellowShirtSpritesheet;
+
+    [Header("Shirts and Hats Spritesheets")]
+    //red flowers
+    public Sprite WhiteShirtRedFlowerSpritesheet;
+    public Sprite RedShirtRedFlowerSpritesheet;
+    public Sprite OrangeShirtRedFlowerSpritesheet;
+    public Sprite YellowShirtRedFlowerSpritesheet;
+
+    //orange flowers
+    public Sprite WhiteShirtOrangeFlowerSpritesheet;
+    public Sprite RedShirtOrangeFlowerSpritesheet;
+    public Sprite OrangeShirtOrangeFlowerSpritesheet;
+    public Sprite YellowShirtOrangeFlowerSpritesheet;
+
+    //yellow flowers
+    public Sprite WhiteShirtYellowFlowerSpritesheet;
+    public Sprite RedShirtYellowFlowerSpritesheet;
+    public Sprite OrangeShirtYellowFlowerSpritesheet;
+    public Sprite YellowShirtYellowFlowerSpritesheet;
+    
+    //hat
+    public Sprite RedShirtHatSpritesheet;
+    public Sprite OrangeShirtHatSpritesheet;
+    public Sprite YellowShirtHatSpritesheet;
+
 }
