@@ -18,8 +18,8 @@ public class UIShop : MonoBehaviour
 
     private void Start()
     {
-        CreateItemButton(Item.GetItemSprite(Item.ItemType.SimpleFertilizer), "Simple Fertilizer", Item.GetItemCost(Item.ItemType.SimpleFertilizer), 0); 
-        CreateItemButton(Item.GetItemSprite(Item.ItemType.ManureFertilizer), "Manure Fertilizer", Item.GetItemCost(Item.ItemType.ManureFertilizer), 0); 
+        //CreateItemButton(Item.GetItemSprite(Item.ItemType.SimpleFertilizer), "Simple Fertilizer", Item.GetItemCost(Item.ItemType.SimpleFertilizer), 0); 
+        //CreateItemButton(Item.GetItemSprite(Item.ItemType.ManureFertilizer), "Manure Fertilizer", Item.GetItemCost(Item.ItemType.ManureFertilizer), 0); 
     }
 
     private void CreateItemButton(Sprite itemSprite, string itemName, int itemCost, int positionIndex)

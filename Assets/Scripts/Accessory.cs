@@ -7,6 +7,7 @@ public class Accessory
     public enum AccessoryType
     {
         NoAccessory,
+        FlowersCirclet,
         RedFlowerCirclet,
         YellowFlowerCirclet,
         OrangeFlowerCirclet,
@@ -24,6 +25,7 @@ public class Accessory
             default:
             case AccessoryType.NoAccessory:             return 0;
             case AccessoryType.RedFlowerCirclet:        return 50;
+            case AccessoryType.FlowersCirclet:          return 45;
             case AccessoryType.YellowFlowerCirclet:     return 20;
             case AccessoryType.OrangeFlowerCirclet:     return 30;
             case AccessoryType.FarmerHat:               return 40;
