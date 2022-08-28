@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IShopCustomer
 {
-    [SerializeField] private int speed;
+    [SerializeField] private int initSpeed;
+    [SerializeField] public  int speed;
     [SerializeField] private int initMoney;
     [SerializeField] private int money;
 
@@ -12,9 +13,15 @@ public class PlayerController : MonoBehaviour, IShopCustomer
     private Rigidbody2D _rb;
     private Vector2 movement;
 
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
+
     void Start()
     {
         money = initMoney;
+        speed = initSpeed;
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
     }
@@ -25,7 +32,7 @@ public class PlayerController : MonoBehaviour, IShopCustomer
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //set animations
+        //trigger animations
         _animator.SetFloat("Horizontal", movement.x);
         _animator.SetFloat("Vertical", movement.y);
         _animator.SetFloat("Speed", movement.sqrMagnitude);
@@ -36,7 +43,6 @@ public class PlayerController : MonoBehaviour, IShopCustomer
     {
         //move the character
         transform.position += new Vector3(movement.x, movement.y) * speed * Time.deltaTime;
-        //_rb.MovePosition(_rb.position + movement * speed);
     }
 
     //used to change the character's sprites 
