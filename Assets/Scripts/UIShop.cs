@@ -6,40 +6,34 @@ using TMPro;
 
 public class UIShop : MonoBehaviour
 {
-    //private Transform container;
+    private Transform container;
     private Transform shopItemTemplate;
-
-    [SerializeField] private Accessory[] _accessories; 
-    [SerializeField] private Outfit[] _outfits; 
-    [SerializeField] private bool isOutfit; //used to know wich type of item to create in the UI
+    private IShopCustomer _shopCustomer;
 
     private void Awake()
     {
-        //container = transform;
-        shopItemTemplate = transform.Find("ShopItemTemplate");
+        container = transform.Find("container");
+        shopItemTemplate = container.Find("ShopItemTemplate");
         //shopItemTemplate.gameObject.SetActive(false);
     }
 
     private void Start()
     {
-        if (isOutfit)
-        {
-            //CreateItemButton(Outfit.GetSprite(Outfit.OutfitType.YellowShirt), "Yellow Shirt", Outfit.GetCost(Outfit.OutfitType.YellowShirt), 0);
-            CreateItemButton(Accessory.AccessoryType.NoAccessory, Outfit.OutfitType.OrangeShirt, Outfit.GetSprite(Outfit.OutfitType.OrangeShirt), "Orange Shirt", Outfit.GetCost(Outfit.OutfitType.OrangeShirt), 1);
-            CreateItemButton(Accessory.AccessoryType.NoAccessory, Outfit.OutfitType.RedShirt, Outfit.GetSprite(Outfit.OutfitType.RedShirt), "Red Shirt", Outfit.GetCost(Outfit.OutfitType.RedShirt), 2);
-        }
-        else
-        {
-            //CreateItemButton(Accessory.GetSprite(Accessory.AccessoryType.YellowFlowerCirclet), "Yellow Flower Circlet", Accessory.GetCost(Accessory.AccessoryType.YellowFlowerCirclet), 1);
-            CreateItemButton(Accessory.AccessoryType.OrangeFlowerCirclet, Outfit.OutfitType.WhiteShirt, Accessory.GetSprite(Accessory.AccessoryType.OrangeFlowerCirclet), "Orange Flower Circlet", Accessory.GetCost(Accessory.AccessoryType.OrangeFlowerCirclet), 2);
-            CreateItemButton(Accessory.AccessoryType.RedFlowerCirclet, Outfit.OutfitType.WhiteShirt, Accessory.GetSprite(Accessory.AccessoryType.RedFlowerCirclet), "Red Flower Circlet", Accessory.GetCost(Accessory.AccessoryType.RedFlowerCirclet), 3);
-            CreateItemButton(Accessory.AccessoryType.FarmerHat, Outfit.OutfitType.WhiteShirt, Accessory.GetSprite(Accessory.AccessoryType.FarmerHat), "Farmer Hat", Accessory.GetCost(Accessory.AccessoryType.FarmerHat), 4);
-        }
+        CreateItemButton(Item.ItemType.YellowShirt, Item.GetSprite(Item.ItemType.YellowShirt), "Yellow Shirt", Item.GetCost(Item.ItemType.YellowShirt), 0);
+        CreateItemButton(Item.ItemType.OrangeShirt, Item.GetSprite(Item.ItemType.OrangeShirt), "Orange Shirt", Item.GetCost(Item.ItemType.OrangeShirt), 1);
+        CreateItemButton(Item.ItemType.RedShirt, Item.GetSprite(Item.ItemType.RedShirt), "Red Shirt", Item.GetCost(Item.ItemType.RedShirt), 2);
+        CreateItemButton(Item.ItemType.YellowFlowerCirclet, Item.GetSprite(Item.ItemType.YellowFlowerCirclet), "Yellow Flower Circlet", Item.GetCost(Item.ItemType.YellowFlowerCirclet), 3);
+        CreateItemButton(Item.ItemType.OrangeFlowerCirclet, Item.GetSprite(Item.ItemType.OrangeFlowerCirclet), "Orange Flower Circlet", Item.GetCost(Item.ItemType.OrangeFlowerCirclet), 4);
+        CreateItemButton(Item.ItemType.RedFlowerCirclet, Item.GetSprite(Item.ItemType.RedFlowerCirclet), "Red Flower Circlet", Item.GetCost(Item.ItemType.RedFlowerCirclet), 5);
+        CreateItemButton(Item.ItemType.FarmerHat, Item.GetSprite(Item.ItemType.FarmerHat), "Farmer Hat", Item.GetCost(Item.ItemType.FarmerHat), 6);
+        shopItemTemplate.gameObject.SetActive(false);
+
+        Hide();
     }
 
-    private void CreateItemButton(Accessory.AccessoryType accessoryType, Outfit.OutfitType outfitType, Sprite itemSprite, string itemName, int itemCost, int positionIndex)
+    private void CreateItemButton(Item.ItemType itemType, Sprite itemSprite, string itemName, int itemCost, int positionIndex)
     {
-        Transform shopItemTransform = Instantiate(shopItemTemplate, transform);
+        Transform shopItemTransform = Instantiate(shopItemTemplate, container);
         //RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
 
         //float shopItemHeight = 30f;
@@ -50,23 +44,24 @@ public class UIShop : MonoBehaviour
 
         shopItemTransform.Find("ItemImage").GetComponent<Image>().sprite = itemSprite;
 
-        if (isOutfit)
-        {
-            shopItemTransform.GetComponent<Button>().onClick.AddListener(delegate { TryBuyOutfit(outfitType); });
-        }
-        else
-        {
-            shopItemTransform.GetComponent<Button>().onClick.AddListener(delegate { TryBuyAccessory(accessoryType); });
-        }
+        shopItemTransform.GetComponent<Button>().onClick.AddListener(delegate { TryBuyItem(itemType); });
+        
     }
 
-    public void TryBuyAccessory(Accessory.AccessoryType accessoryType)
+    public void TryBuyItem(Item.ItemType itemType)
     {
+        _shopCustomer.BoughtItem(itemType);
+    }
 
+    public void Show(IShopCustomer shopCustomer)
+    {
+        _shopCustomer = shopCustomer;
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
     }
     
-    public void TryBuyOutfit(Outfit.OutfitType outfitType)
-    {
-
-    }
 }

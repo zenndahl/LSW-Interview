@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IShopCustomer
 {
     [SerializeField] private int speed;
     [SerializeField] private int initMoney;
@@ -45,4 +45,8 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void BoughtItem(Item.ItemType itemType)
+    {
+        Debug.Log("Comprou");
+    }
 }
