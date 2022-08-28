@@ -50,7 +50,11 @@ public class UIShop : MonoBehaviour
 
     public void TryBuyItem(Item.ItemType itemType)
     {
-        _shopCustomer.BoughtItem(itemType);
+        if (_shopCustomer.TrySpendGold(Item.GetCost(itemType)))
+        {
+            _shopCustomer.BoughtItem(itemType);
+        }
+        
     }
 
     public void Show(IShopCustomer shopCustomer)

@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private List<Item.ItemType> _items = new List<Item.ItemType>();
+
+    private List<Item.ItemType> equipedItems = new List<Item.ItemType>(2);
+
+    public void AddItemToInventory(Item.ItemType itemToAdd)
     {
-        
+        _items.Add(itemToAdd);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EquipItem(Item.ItemType itemToEquip)
     {
-        
+        if(equipedItems.Count < 2)
+        {
+            equipedItems.Add(itemToEquip);
+        }
+    }
+
+    public List<Item.ItemType> GetInventoryItems()
+    {
+        return _items;
+    }
+
+    public List<Item.ItemType> GetEquipedItems()
+    {
+        return equipedItems;
     }
 }

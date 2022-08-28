@@ -6,12 +6,14 @@ public class PlayerController : MonoBehaviour, IShopCustomer
 {
     [SerializeField] private int initSpeed;
     [SerializeField] public  int speed;
-    [SerializeField] private int initMoney;
-    [SerializeField] private int money;
+    [SerializeField] private int initGold;
+    [SerializeField] private int gold;
 
     private Animator _animator;
     private Rigidbody2D _rb;
     private Vector2 movement;
+
+    public Inventory _inventory;
 
     private void Awake()
     {
@@ -20,7 +22,7 @@ public class PlayerController : MonoBehaviour, IShopCustomer
 
     void Start()
     {
-        money = initMoney;
+        gold = initGold;
         speed = initSpeed;
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
@@ -53,6 +55,19 @@ public class PlayerController : MonoBehaviour, IShopCustomer
 
     public void BoughtItem(Item.ItemType itemType)
     {
-        Debug.Log("Comprou");
+        _inventory.AddItemToInventory(itemType);
+    }
+
+    public bool TrySpendGold(int spendGoldAmount)
+    {
+        if(gold > spendGoldAmount)
+        {
+            gold -= spendGoldAmount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
