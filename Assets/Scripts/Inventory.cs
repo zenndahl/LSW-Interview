@@ -15,9 +15,18 @@ public class Inventory : MonoBehaviour
 
     public void EquipItem(Item.ItemType itemToEquip)
     {
-        if(equipedItems.Count < 2)
+        foreach(Item.ItemType item in equipedItems)
         {
-            equipedItems.Add(itemToEquip);
+            //the player can only have 2 items, 1 outfit (shirt) and 1 accessory (headpiece)
+            if(Item.GetLabel(item) == Item.GetLabel(itemToEquip))
+            {
+                equipedItems.Remove(item);
+                equipedItems.Add(itemToEquip);
+            }
+            else if(equipedItems.Count < 2)
+            {
+                equipedItems.Add(itemToEquip);
+            }
         }
     }
 

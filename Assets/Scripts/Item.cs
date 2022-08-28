@@ -6,6 +6,7 @@ public class Item
 {
     public enum ItemType
     {
+        NoAccessory,
         WhiteShirt,
         RedShirt,
         YellowShirt,
@@ -47,6 +48,23 @@ public class Item
             case ItemType.YellowFlowerCirclet: return GameAssets.i.YellowCirclet;
             case ItemType.OrangeFlowerCirclet: return GameAssets.i.OrangeCirclet;
             case ItemType.FarmerHat: return GameAssets.i.FarmerHat;
+        }
+    }
+
+    public static string GetLabel(ItemType _itemType)
+    {
+        switch (_itemType)
+        {
+            default:
+            case ItemType.WhiteShirt: return "Outfit";
+            case ItemType.RedShirt: return "Outfit";
+            case ItemType.YellowShirt: return "Outfit";
+            case ItemType.OrangeShirt: return "Outfit";
+            case ItemType.FlowersCirclet: return "Accessory";
+            case ItemType.RedFlowerCirclet: return "Accessory";
+            case ItemType.YellowFlowerCirclet: return "Accessory";
+            case ItemType.OrangeFlowerCirclet: return "Accessory";
+            case ItemType.FarmerHat: return "Accessory";
         }
     }
 }

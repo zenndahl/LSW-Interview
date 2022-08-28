@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour, IShopCustomer
     //used to change the character's sprites 
     private void LateUpdate()
     {
-        
     }
 
     public void BoughtItem(Item.ItemType itemType)
@@ -69,5 +68,22 @@ public class PlayerController : MonoBehaviour, IShopCustomer
         {
             return false;
         }
+    }
+
+    public void ChangeItems()
+    {
+        var items = _inventory.GetEquipedItems();
+        var outfit = Item.ItemType.WhiteShirt;
+        var accessory = Item.ItemType.NoAccessory;
+
+        foreach(Item.ItemType item in items)
+        {
+            //grab the items by their label
+            if (Item.GetLabel(item) == "Outfit") outfit = item;
+            if (Item.GetLabel(item) == "Accessory") accessory = item;
+        }
+
+
+
     }
 }
