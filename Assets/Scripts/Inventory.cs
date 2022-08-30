@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    //THIS SCRIPT ITS NOT WORKING FOR REASONS UNKNOWN TO MY PERSON
+
+
     private List<Item.ItemType> _items = new List<Item.ItemType>();
 
     private List<Item.ItemType> equipedItems = new List<Item.ItemType>(2);
 
     public void AddItemToInventory(Item.ItemType itemToAdd)
     {
-        _items.Add(itemToAdd);
+        print(itemToAdd);
+        _items.Add(itemToAdd); //for some reason the object is lost here
     }
 
     public void EquipItem(Item.ItemType itemToEquip)

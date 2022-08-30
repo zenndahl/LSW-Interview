@@ -10,19 +10,15 @@ public class ShopkeeperInteraction : NpcInteraction
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canInteract)
+        if (Input.GetKeyDown(KeyCode.E) && !dialogText.activeSelf && canInteract)
         {
-            if(!dialogText.activeSelf)
-            {
-                dialogText.SetActive(true);
-            }
+            dialogText.SetActive(true);
+        }
 
-            //the shop verification prevents the dialog to open if the player press E and the shop is open
-            if (dialogText.activeSelf && !shop.activeSelf)
-            {
-                dialogText.SetActive(false);
-                if (shopCustomer != null) OpenShop();
-            }
+        if(Input.GetKeyDown(KeyCode.Y) && dialogText.activeSelf)
+        {
+            dialogText.SetActive(false);
+            if (shopCustomer != null) OpenShop();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && canInteract)
@@ -34,11 +30,8 @@ public class ShopkeeperInteraction : NpcInteraction
 
     private void OpenShop()
     {
-        if(shopCustomer != null)
-        {
-            shop.GetComponent<UIShop>().Show(shopCustomer);
-            Cursor.visible = true;
-        }
+        shop.GetComponent<UIShop>().Show(shopCustomer);
+        Cursor.visible = true;
     }
 
     private void CloseShop()
