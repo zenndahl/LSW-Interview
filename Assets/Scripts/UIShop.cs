@@ -38,16 +38,22 @@ public class UIShop : MonoBehaviour
 
         shopItemTransform.Find("ItemImage").GetComponent<Image>().sprite = itemSprite;
 
-        shopItemTransform.GetComponent<Button>().onClick.AddListener(delegate { TryBuyItem(itemType); });
+        shopItemTransform.GetComponent<Button>().onClick.AddListener(delegate { TryBuyItem(itemType, shopItemTemplate); });
+
+
         
     }
 
-    public void TryBuyItem(Item.ItemType itemType)
+    public void TryBuyItem(Item.ItemType itemType, Transform shopItemTemplate)
     {
+        
         if (_shopCustomer.TrySpendGold(Item.GetCost(itemType)))
         {
             _shopCustomer.BoughtItem(itemType);
+            shopItemTemplate.gameObject.GetComponent<Button>().onClick.RemoveListener(delegate { TryBuyItem(itemType, shopItemTemplate); });
+            shopItemTemplate.Find("HideUI").gameObject.SetActive(true);
         }
+        //else activate visual/audio cue
         
     }
 

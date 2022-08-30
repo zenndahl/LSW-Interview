@@ -48,25 +48,79 @@ MonoBehaviour:
   RedShirtSprite: {fileID: 21300000, guid: 80fe8052ce5bdab44a81aaaaacc8b8b0, type: 3}
   OrangeShirtSprite: {fileID: 21300000, guid: 5f3b0268117b7e747b5929093ba5c98b, type: 3}
   YellowShirtSprite: {fileID: 21300000, guid: ef9da58df795f8342af5683f3fd7c4a5, type: 3}
+  NoAccessorySprite: {fileID: 21300000, guid: b066d0ae193107044beeceda546c6a78, type: 3}
   FarmerHat: {fileID: 21300000, guid: 780e24ee24f519f4caca5b1142687b6e, type: 3}
   RedCirclet: {fileID: 21300000, guid: 58b6123a5ae046046a57aeeb8cf7b180, type: 3}
   YellowCirclet: {fileID: 21300000, guid: 5868e7311484cdc4ab7bb00b1b2ea98b, type: 3}
   OrangeCirclet: {fileID: 21300000, guid: 7ac563604f834334f81bdcb94f57eedd, type: 3}
-  RedShirtSpritesheet: {fileID: 0}
-  OrangeShirtSpritesheet: {fileID: 0}
-  YellowShirtSpritesheet: {fileID: 0}
-  WhiteShirtRedFlowerSpritesheet: {fileID: 0}
-  RedShirtRedFlowerSpritesheet: {fileID: 0}
-  OrangeShirtRedFlowerSpritesheet: {fileID: 0}
-  YellowShirtRedFlowerSpritesheet: {fileID: 0}
-  WhiteShirtOrangeFlowerSpritesheet: {fileID: 0}
-  RedShirtOrangeFlowerSpritesheet: {fileID: 0}
-  OrangeShirtOrangeFlowerSpritesheet: {fileID: 0}
-  YellowShirtOrangeFlowerSpritesheet: {fileID: 0}
-  WhiteShirtYellowFlowerSpritesheet: {fileID: 0}
-  RedShirtYellowFlowerSpritesheet: {fileID: 0}
-  OrangeShirtYellowFlowerSpritesheet: {fileID: 0}
-  YellowShirtYellowFlowerSpritesheet: {fileID: 0}
-  RedShirtHatSpritesheet: {fileID: 0}
-  OrangeShirtHatSpritesheet: {fileID: 0}
-  YellowShirtHatSpritesheet: {fileID: 0}
+  RedShirtAnim: {fileID: 0}
+  OrangeShirtAnim: {fileID: 0}
+  YellowShirtAnim: {fileID: 0}
+  DWhiteShirtAnim: {fileID: 0}
+  DWhiteShirtRedFlowerAnim: {fileID: 0}
+  DRedShirtRedFlowerAnim: {fileID: 0}
+  DOrangeShirtRedFlowerAnim: {fileID: 0}
+  DYellowShirtRedFlowerAnim: {fileID: 0}
+  UWhiteShirtAnim: {fileID: 0}
+  UWhiteShirtRedFlowerAnim: {fileID: 0}
+  URedShirtRedFlowerAnim: {fileID: 0}
+  UOrangeShirtRedFlowerAnim: {fileID: 0}
+  UYellowShirtRedFlowerAnim: {fileID: 0}
+  LWhiteShirtAnim: {fileID: 0}
+  LWhiteShirtRedFlowerAnim: {fileID: 0}
+  LRedShirtRedFlowerAnim: {fileID: 0}
+  LOrangeShirtRedFlowerAnim: {fileID: 0}
+  LYellowShirtRedFlowerAnim: {fileID: 0}
+  RWhiteShirtAnim: {fileID: 0}
+  RWhiteShirtRedFlowerAnim: {fileID: 0}
+  RRedShirtRedFlowerAnim: {fileID: 0}
+  ROrangeShirtRedFlowerAnim: {fileID: 0}
+  RYellowShirtRedFlowerAnim: {fileID: 0}
+  DWhiteShirtOrangeFlowerAnim: {fileID: 0}
+  DRedShirtOrangeFlowerAnim: {fileID: 0}
+  DOrangeShirtOrangeFlowerAnim: {fileID: 0}
+  DYellowShirtOrangeFlowerAnim: {fileID: 0}
+  UWhiteShirtOrangeFlowerAnim: {fileID: 0}
+  URedShirtOrangeFlowerAnim: {fileID: 0}
+  UOrangeShirtOrangeFlowerAnim: {fileID: 0}
+  UYellowShirtOrangeFlowerAnim: {fileID: 0}
+  LWhiteShirtOrangeFlowerAnim: {fileID: 0}
+  LRedShirtOrangeFlowerAnim: {fileID: 0}
+  LOrangeShirtOrangeFlowerAnim: {fileID: 0}
+  LYellowShirtOrangeFlowerAnim: {fileID: 0}
+  RWhiteShirtOrangeFlowerAnim: {fileID: 0}
+  RRedShirtOrangeFlowerAnim: {fileID: 0}
+  ROrangeShirtOrangeFlowerAnim: {fileID: 0}
+  RYellowShirtOrangeFlowerAnim: {fileID: 0}
+  DWhiteShirtYellowFlowerAnim: {fileID: 0}
+  DRedShirtYellowFlowerAnim: {fileID: 0}
+  DOrangeShirtYellowFlowerAnim: {fileID: 0}
+  DYellowShirtYellowFlowerAnim: {fileID: 0}
+  UWhiteShirtYellowFlowerAnim: {fileID: 0}
+  URedShirtYellowFlowerAnim: {fileID: 0}
+  UOrangeShirtYellowFlowerAnim: {fileID: 0}
+  UYellowShirtYellowFlowerAnim: {fileID: 0}
+  LWhiteShirtYellowFlowerAnim: {fileID: 0}
+  LRedShirtYellowFlowerAnim: {fileID: 0}
+  LOrangeShirtYellowFlowerAnim: {fileID: 0}
+  LYellowShirtYellowFlowerAnim: {fileID: 0}
+  RWhiteShirtYellowFlowerAnim: {fileID: 0}
+  RRedShirtYellowFlowerAnim: {fileID: 0}
+  ROrangeShirtYellowFlowerAnim: {fileID: 0}
+  RYellowShirtYellowFlowerAnim: {fileID: 0}
+  DWhiteShirtHatAnim: {fileID: 0}
+  DRedShirtHatAnim: {fileID: 0}
+  DOrangeShirtHatAnim: {fileID: 0}
+  DYellowShirtHatAnim: {fileID: 0}
+  UWhiteShirtHatAnim: {fileID: 0}
+  URedShirtHatAnim: {fileID: 0}
+  UOrangeShirtHatAnim: {fileID: 0}
+  UYellowShirtHatAnim: {fileID: 0}
+  LWhiteShirtHatAnim: {fileID: 0}
+  LRedShirtHatAnim: {fileID: 0}
+  LOrangeShirtHatAnim: {fileID: 0}
+  LYellowShirtHatAnim: {fileID: 0}
+  RWhiteShirtHatAnim: {fileID: 0}
+  RRedShirtHatAnim: {fileID: 0}
+  ROrangeShirtHatAnim: {fileID: 0}
+  RYellowShirtHatAnim: {fileID: 0}

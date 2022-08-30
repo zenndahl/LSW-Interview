@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    private IPlayerInventory _playerInventory;
     [SerializeField] private GameObject interactionTooltip;
     [SerializeField] private GameObject inventoryUI;
     private bool canInteract = false;
@@ -12,12 +13,29 @@ public class Inventory : MonoBehaviour
     {
         if (!inventoryUI.activeSelf && Input.GetKeyDown(KeyCode.E) && canInteract)
         {
-            inventoryUI.SetActive(true);
+            OpenInventory();
         }
 
         if (inventoryUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
+            CloseInventory();
+        }
+    }
+
+    private void OpenInventory()
+    {
+        inventoryUI.SetActive(true);
+        inventoryUI.GetComponent<InventoryUI>().Show(_playerInventory);
+        Cursor.visible = true;
+    }
+
+    private void CloseInventory()
+    {
+        if (_playerInventory != null)
+        {
+            inventoryUI.GetComponent<InventoryUI>().Hide();
             inventoryUI.SetActive(false);
+            Cursor.visible = false;
         }
     }
 
@@ -27,6 +45,7 @@ public class Inventory : MonoBehaviour
         {
             canInteract = true;
             interactionTooltip.SetActive(true);
+            _playerInventory = other.gameObject.GetComponent<IPlayerInventory>();
         }
     }
 
@@ -36,6 +55,7 @@ public class Inventory : MonoBehaviour
         {
             canInteract = false;
             interactionTooltip.SetActive(false);
+            CloseInventory();
         }
     }
 

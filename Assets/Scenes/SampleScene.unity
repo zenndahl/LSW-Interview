@@ -272,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSpeed: 7
   speed: 0
-  initGold: 0
+  initGold: 9999
   gold: 0
 --- !u!50 &31740498
 Rigidbody2D:
@@ -57243,7 +57243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1194290624, guid: 15b09883ae395194bbfa9d69e2d0e2b8, type: 3}
+  m_Sprite: {fileID: 189499089, guid: 15b09883ae395194bbfa9d69e2d0e2b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

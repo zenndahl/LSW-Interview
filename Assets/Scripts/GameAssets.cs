@@ -24,6 +24,7 @@ public class GameAssets : MonoBehaviour
     public Sprite YellowShirtSprite;
 
     [Header("Accessory Assets")]
+    public Sprite NoAccessorySprite;
     public Sprite FarmerHat;
     public Sprite RedCirclet;
     public Sprite YellowCirclet;

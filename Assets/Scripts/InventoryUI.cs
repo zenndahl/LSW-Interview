@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -35,15 +36,22 @@ public class InventoryUI : MonoBehaviour
     private void CreateItemDisplay(Item.ItemType itemType, Sprite itemSprite, string itemName)
     {
         Transform shopItemTransform = Instantiate(shopItemTemplate, container);
-        //RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
-
-        //float shopItemHeight = 30f;
-        //shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
 
         shopItemTransform.Find("ItemName").GetComponent<TextMeshProUGUI>().SetText(itemName);
         shopItemTransform.Find("ItemImage").GetComponent<Image>().sprite = itemSprite;
 
         shopItemTransform.GetComponent<Button>().onClick.AddListener(delegate { _playerInventory.EquipItem(itemType); });
 
+    }
+
+    public void Show(IPlayerInventory _playerInventory)
+    {
+        this._playerInventory = _playerInventory;
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
     }
 }

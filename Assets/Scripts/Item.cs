@@ -48,6 +48,7 @@ public class Item
             case ItemType.YellowFlowerCirclet: return GameAssets.i.YellowCirclet;
             case ItemType.OrangeFlowerCirclet: return GameAssets.i.OrangeCirclet;
             case ItemType.FarmerHat: return GameAssets.i.FarmerHat;
+            case ItemType.NoAccessory: return GameAssets.i.NoAccessorySprite;
         }
     }
 

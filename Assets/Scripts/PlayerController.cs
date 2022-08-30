@@ -64,8 +64,6 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
     public void BoughtItem(Item.ItemType itemType)
     {
         _items.Add(itemType);
-        //_inventory.AddItemToInventory(itemType);
-        print(_items);
     }
 
     public bool TrySpendGold(int spendGoldAmount)
