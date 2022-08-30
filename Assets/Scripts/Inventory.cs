@@ -4,43 +4,39 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    //THIS SCRIPT ITS NOT WORKING FOR REASONS UNKNOWN TO MY PERSON
+    [SerializeField] private GameObject interactionTooltip;
+    [SerializeField] private GameObject inventoryUI;
+    private bool canInteract = false;
 
-
-    private List<Item.ItemType> _items = new List<Item.ItemType>();
-
-    private List<Item.ItemType> equipedItems = new List<Item.ItemType>(2);
-
-    public void AddItemToInventory(Item.ItemType itemToAdd)
+    void Update()
     {
-        print(itemToAdd);
-        _items.Add(itemToAdd); //for some reason the object is lost here
-    }
-
-    public void EquipItem(Item.ItemType itemToEquip)
-    {
-        foreach(Item.ItemType item in equipedItems)
+        if (!inventoryUI.activeSelf && Input.GetKeyDown(KeyCode.E) && canInteract)
         {
-            //the player can only have 2 items, 1 outfit (shirt) and 1 accessory (headpiece)
-            if(Item.GetLabel(item) == Item.GetLabel(itemToEquip))
-            {
-                equipedItems.Remove(item);
-                equipedItems.Add(itemToEquip);
-            }
-            else if(equipedItems.Count < 2)
-            {
-                equipedItems.Add(itemToEquip);
-            }
+            inventoryUI.SetActive(true);
+        }
+
+        if (inventoryUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            inventoryUI.SetActive(false);
         }
     }
 
-    public List<Item.ItemType> GetInventoryItems()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        return _items;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canInteract = true;
+            interactionTooltip.SetActive(true);
+        }
     }
 
-    public List<Item.ItemType> GetEquipedItems()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        return equipedItems;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canInteract = false;
+            interactionTooltip.SetActive(false);
+        }
     }
+
 }

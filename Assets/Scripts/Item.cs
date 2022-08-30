@@ -51,6 +51,24 @@ public class Item
         }
     }
 
+    public static string GetName(ItemType _itemType)
+    {
+        switch (_itemType)
+        {
+            default:
+            case ItemType.WhiteShirt: return "White Shirt";
+            case ItemType.RedShirt: return "Red Shirt";
+            case ItemType.YellowShirt: return "Yellow Shirt";
+            case ItemType.OrangeShirt: return "Orange Shirt";
+            case ItemType.FlowersCirclet: return "Flowers Circlet";
+            case ItemType.RedFlowerCirclet: return "Red Flowers Circlet";
+            case ItemType.YellowFlowerCirclet: return "Yellow Flowers Circlet";
+            case ItemType.OrangeFlowerCirclet: return "Orange Flowers Circlet";
+            case ItemType.FarmerHat: return "Farmer Hat";
+            case ItemType.NoAccessory: return "No Accessory";
+        }
+    }
+
     public static string GetLabel(ItemType _itemType)
     {
         switch (_itemType)
@@ -65,6 +83,7 @@ public class Item
             case ItemType.YellowFlowerCirclet: return "Accessory";
             case ItemType.OrangeFlowerCirclet: return "Accessory";
             case ItemType.FarmerHat: return "Accessory";
+            case ItemType.NoAccessory: return "Accessory";
         }
     }
 }

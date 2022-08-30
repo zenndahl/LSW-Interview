@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -81,6 +80,17 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
             return false;
         }
     }
+
+    public List<Item.ItemType> GetInventoryItems()
+    {
+        return _items;
+    }
+
+    public List<Item.ItemType> GetEquipedItems()
+    {
+        return equipedItems;
+    }
+
     public void EquipItem(Item.ItemType itemToEquip)
     {
         foreach (Item.ItemType item in equipedItems)
@@ -96,23 +106,6 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
                 equipedItems.Add(itemToEquip);
             }
         }
-    }
-
-    public void ChangeItems()
-    {
-        //var items = _inventory.GetEquipedItems();
-        Item.ItemType outfit;
-        Item.ItemType accessory;
-
-        foreach(Item.ItemType item in equipedItems)
-        {
-            //grab the items by their label
-            if (Item.GetLabel(item) == "Outfit") outfit = item;
-            if (Item.GetLabel(item) == "Accessory") accessory = item;
-        }
-
-
-
     }
 
     public void CollectFlower(int flowerType)

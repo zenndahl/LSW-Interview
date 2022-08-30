@@ -6,8 +6,8 @@ using TMPro;
 
 public class NpcInteraction : MonoBehaviour
 {
-    public GameObject interactionTooltip;
-    public GameObject dialogText;
+    [SerializeField] protected GameObject interactionTooltip;
+    [SerializeField] protected GameObject dialogText;
     protected bool canInteract = false;
 
     private void Update()
