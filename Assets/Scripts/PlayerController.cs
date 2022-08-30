@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
     private Rigidbody2D _rb;
     private Vector2 movement;
 
-    public Inventory _inventory;
+    //public Inventory _inventory;
+    private List<Item.ItemType> _items = new List<Item.ItemType>();
+    private List<Item.ItemType> equipedItems = new List<Item.ItemType>(2);
     private int yellowFlowers;
     private int orangeFlowers;
     private int redFlowers;
@@ -29,6 +31,11 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
         speed = initSpeed;
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
+
+        _items.Add(Item.ItemType.WhiteShirt);
+        _items.Add(Item.ItemType.NoAccessory);
+        equipedItems.Add(Item.ItemType.WhiteShirt);
+        equipedItems.Add(Item.ItemType.NoAccessory);
     }
 
     private void Update()
@@ -57,7 +64,9 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
 
     public void BoughtItem(Item.ItemType itemType)
     {
-        _inventory.AddItemToInventory(itemType);
+        _items.Add(itemType);
+        //_inventory.AddItemToInventory(itemType);
+        print(_items);
     }
 
     public bool TrySpendGold(int spendGoldAmount)
@@ -72,14 +81,30 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
             return false;
         }
     }
+    public void EquipItem(Item.ItemType itemToEquip)
+    {
+        foreach (Item.ItemType item in equipedItems)
+        {
+            //the player can only have 2 items, 1 outfit (shirt) and 1 accessory (headpiece)
+            if (Item.GetLabel(item) == Item.GetLabel(itemToEquip))
+            {
+                equipedItems.Remove(item);
+                equipedItems.Add(itemToEquip);
+            }
+            else if (equipedItems.Count < 2)
+            {
+                equipedItems.Add(itemToEquip);
+            }
+        }
+    }
 
     public void ChangeItems()
     {
-        var items = _inventory.GetEquipedItems();
-        var outfit = Item.ItemType.WhiteShirt;
-        var accessory = Item.ItemType.NoAccessory;
+        //var items = _inventory.GetEquipedItems();
+        Item.ItemType outfit;
+        Item.ItemType accessory;
 
-        foreach(Item.ItemType item in items)
+        foreach(Item.ItemType item in equipedItems)
         {
             //grab the items by their label
             if (Item.GetLabel(item) == "Outfit") outfit = item;

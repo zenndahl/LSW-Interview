@@ -11,14 +11,14 @@ public class FlowerSpawner : MonoBehaviour
 
     void Start()
     {
-        int r = Random.Range(0, 2);
+        float r = Random.Range(0, 2);
         GetFlowerPrefab(r);
     }
 
-    private void GetFlowerPrefab(int r)
+    private void GetFlowerPrefab(float r)
     {
-        if (r == 0) flowerPrefab = (GameObject)Resources.Load("Prefabs/YellowFlower");
-        if (r == 1) flowerPrefab = (GameObject)Resources.Load("Prefabs/OrangeFlower");
+        if (r >= 0 && r < 1) flowerPrefab = (GameObject)Resources.Load("Prefabs/YellowFlower");
+        if (r >= 1 && r < 2) flowerPrefab = (GameObject)Resources.Load("Prefabs/OrangeFlower");
         if (r == 2) flowerPrefab = (GameObject)Resources.Load("Prefabs/RedFlower");
     }
 
@@ -39,7 +39,7 @@ public class FlowerSpawner : MonoBehaviour
 
     private void SetTimer()
     {
-        spawnTime = Random.Range(5, 10);
+        spawnTime = Random.Range(25, 40);
         spawnCountdown = spawnTime;
     }
 
@@ -47,7 +47,6 @@ public class FlowerSpawner : MonoBehaviour
     {
         GameObject flower = Instantiate(flowerPrefab);
         flower.transform.position = transform.position;
-        Debug.Log(flower.transform.position);
         flower.transform.parent = transform;
         hasFlower = true;
     }
