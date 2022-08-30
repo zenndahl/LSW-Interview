@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 31740491}
   - component: {fileID: 31740495}
   - component: {fileID: 31740498}
+  - component: {fileID: 31740499}
   - component: {fileID: 31740497}
   m_Layer: 0
   m_Name: Player
@@ -272,9 +273,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSpeed: 7
   speed: 0
-  initGold: 0
+  initGold: 15
   gold: 0
-  _inventory: {fileID: 0}
+  _inventory: {fileID: 31740499}
 --- !u!50 &31740498
 Rigidbody2D:
   serializedVersion: 4
@@ -296,6 +297,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &31740499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31740490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebe69218a95970498a3416f5f55a40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &108552935
 GameObject:
   m_ObjectHideFlags: 0
