@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour, IShopCustomer
+public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
 {
     [SerializeField] private int initSpeed;
     [SerializeField] public  int speed;
@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour, IShopCustomer
     private Vector2 movement;
 
     public Inventory _inventory;
+    private int yellowFlowers;
+    private int orangeFlowers;
+    private int redFlowers;
 
     private void Awake()
     {
@@ -85,5 +88,17 @@ public class PlayerController : MonoBehaviour, IShopCustomer
 
 
 
+    }
+
+    public void CollectFlower(int flowerType)
+    {
+        if (flowerType == 0) yellowFlowers++;
+        if (flowerType == 1) orangeFlowers++;
+        if (flowerType == 2) redFlowers++;
+    }
+
+    public void AddGold(int goldAmount)
+    {
+        gold += goldAmount;
     }
 }
