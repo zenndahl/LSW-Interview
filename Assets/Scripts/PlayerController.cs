@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
         _items.Add(Item.ItemType.NoAccessory);
         equipedItems.Add(Item.ItemType.WhiteShirt);
         equipedItems.Add(Item.ItemType.NoAccessory);
+
+        _animator.SetBool(animationName, true);
     }
 
     private void Update()

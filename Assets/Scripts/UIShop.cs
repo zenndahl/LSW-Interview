@@ -51,7 +51,7 @@ public class UIShop : MonoBehaviour
         {
             _shopCustomer.BoughtItem(itemType);
             shopItemTemplate.gameObject.GetComponent<Button>().onClick.RemoveListener(delegate { TryBuyItem(itemType, shopItemTemplate); });
-            shopItemTemplate.Find("HideUI").gameObject.SetActive(true);
+            //shopItemTemplate.Find("HideUI").gameObject.SetActive(true);
         }
         //else activate visual/audio cue
         

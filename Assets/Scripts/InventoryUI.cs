@@ -24,6 +24,15 @@ public class InventoryUI : MonoBehaviour
 
     private void OnEnable()
     {
+        //clear previous list to prevent duplication
+        for(int i = 0; i < container.childCount; i++)
+        {
+            if(container.GetChild(i) != null)
+            {
+                Destroy(container.GetChild(i));
+            }
+        }
+
         PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
         _playerInventory = player.GetComponent<IPlayerInventory>();
 
@@ -31,6 +40,8 @@ public class InventoryUI : MonoBehaviour
         {
             CreateItemDisplay(item, Item.GetSprite(item), Item.GetName(item));
         }
+
+        Hide();
     }
 
     private void CreateItemDisplay(Item.ItemType itemType, Sprite itemSprite, string itemName)
