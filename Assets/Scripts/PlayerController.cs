@@ -319,4 +319,9 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
     {
         gold += goldAmount;
     }
+
+    public int GetGold()
+    {
+        return gold;
+    }
 }

@@ -6,4 +6,5 @@ public interface IShopCustomer
 {
     void BoughtItem(Item.ItemType itemType);
     bool TrySpendGold(int spendGoldAmount);
+    int GetGold();
 }
