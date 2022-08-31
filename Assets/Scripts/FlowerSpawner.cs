@@ -11,7 +11,7 @@ public class FlowerSpawner : MonoBehaviour
 
     void Start()
     {
-        float r = Random.Range(0, 2);
+        float r = Random.Range(0, 2.5f);
         GetFlowerPrefab(r);
     }
 
@@ -19,7 +19,7 @@ public class FlowerSpawner : MonoBehaviour
     {
         if (r >= 0 && r < 1) flowerPrefab = (GameObject)Resources.Load("Prefabs/YellowFlower");
         if (r >= 1 && r < 2) flowerPrefab = (GameObject)Resources.Load("Prefabs/OrangeFlower");
-        if (r == 2) flowerPrefab = (GameObject)Resources.Load("Prefabs/RedFlower");
+        if (r >= 2) flowerPrefab = (GameObject)Resources.Load("Prefabs/RedFlower");
     }
 
     // Update is called once per frame
