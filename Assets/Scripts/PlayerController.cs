@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
     private int orangeFlowers;
     private int redFlowers;
 
+    private string animationName = "Default";
+
     private void Awake()
     {
         Cursor.visible = false;
@@ -106,6 +108,7 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
                 equipedItems.Add(itemToEquip);
             }
         }
+        UpdateAnimations();
     }
 
     private void UpdateAnimations()
@@ -161,11 +164,148 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
                 break;
         }
 
-        if (shirt == 0 && outfit == 0)
+        if (shirt == 0 && hat == 0)
         {
-            //disable other animations bools
-            _animator.SetBool("Default", true);
-        } 
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "Default";
+        }
+        if (shirt == 0 && hat == 1)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "WhiteFlowersY";
+        }
+        if (shirt == 0 && hat == 2)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "WhiteFlowersO";
+        }
+        if (shirt == 0 && hat == 3)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "WhiteFlowersR";
+        }
+        if (shirt == 0 && hat == 4)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "Hat";
+        }
+        if (shirt == 1 && hat == 0)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "Yellow";
+        }
+        if (shirt == 1 && hat == 1)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "YellowFlowerY";
+        }
+        if (shirt == 1 && hat == 2)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "YellowFlowerO";
+        }
+        if (shirt == 1 && hat == 3)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "YellowFlowerR";
+        }
+        if (shirt == 1 && hat == 4)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "HatYellow";
+        }
+        if (shirt == 2 && hat == 0)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "Orange";
+        }
+        if (shirt == 2 && hat == 1)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "OrangeFlowersY";
+        }
+        if (shirt == 2 && hat == 2)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "OrangeFlowersO";
+        }
+        if (shirt == 2 && hat == 3)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "OrangeFlowersR";
+        }
+        if (shirt == 2 && hat == 4)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "HatOrange";
+        }
+        if (shirt == 3 && hat == 0)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "Red";
+        }
+        if (shirt == 3 && hat == 1)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "RedFlowersY";
+        }
+        if (shirt == 3 && hat == 2)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "RedFlowersO";
+        }
+        if (shirt == 3 && hat == 3)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "RedFlowersR";
+        }
+        if (shirt == 3 && hat == 4)
+        {
+            //disable previous animation bool
+            _animator.SetBool(animationName, false);
+            //set new animation bool variable name
+            animationName = "HatRed";
+        }
+
+        _animator.SetBool(animationName, true);
     }
 
     public void CollectFlower(int flowerType)
