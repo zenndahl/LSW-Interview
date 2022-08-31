@@ -53,74 +53,7 @@ MonoBehaviour:
   RedCirclet: {fileID: 21300000, guid: 58b6123a5ae046046a57aeeb8cf7b180, type: 3}
   YellowCirclet: {fileID: 21300000, guid: 5868e7311484cdc4ab7bb00b1b2ea98b, type: 3}
   OrangeCirclet: {fileID: 21300000, guid: 7ac563604f834334f81bdcb94f57eedd, type: 3}
-  RedShirtAnim: {fileID: 0}
-  OrangeShirtAnim: {fileID: 0}
-  YellowShirtAnim: {fileID: 0}
-  DWhiteShirtAnim: {fileID: 0}
-  DWhiteShirtRedFlowerAnim: {fileID: 0}
-  DRedShirtRedFlowerAnim: {fileID: 0}
-  DOrangeShirtRedFlowerAnim: {fileID: 0}
-  DYellowShirtRedFlowerAnim: {fileID: 0}
-  UWhiteShirtAnim: {fileID: 0}
-  UWhiteShirtRedFlowerAnim: {fileID: 0}
-  URedShirtRedFlowerAnim: {fileID: 0}
-  UOrangeShirtRedFlowerAnim: {fileID: 0}
-  UYellowShirtRedFlowerAnim: {fileID: 0}
-  LWhiteShirtAnim: {fileID: 0}
-  LWhiteShirtRedFlowerAnim: {fileID: 0}
-  LRedShirtRedFlowerAnim: {fileID: 0}
-  LOrangeShirtRedFlowerAnim: {fileID: 0}
-  LYellowShirtRedFlowerAnim: {fileID: 0}
-  RWhiteShirtAnim: {fileID: 0}
-  RWhiteShirtRedFlowerAnim: {fileID: 0}
-  RRedShirtRedFlowerAnim: {fileID: 0}
-  ROrangeShirtRedFlowerAnim: {fileID: 0}
-  RYellowShirtRedFlowerAnim: {fileID: 0}
-  DWhiteShirtOrangeFlowerAnim: {fileID: 0}
-  DRedShirtOrangeFlowerAnim: {fileID: 0}
-  DOrangeShirtOrangeFlowerAnim: {fileID: 0}
-  DYellowShirtOrangeFlowerAnim: {fileID: 0}
-  UWhiteShirtOrangeFlowerAnim: {fileID: 0}
-  URedShirtOrangeFlowerAnim: {fileID: 0}
-  UOrangeShirtOrangeFlowerAnim: {fileID: 0}
-  UYellowShirtOrangeFlowerAnim: {fileID: 0}
-  LWhiteShirtOrangeFlowerAnim: {fileID: 0}
-  LRedShirtOrangeFlowerAnim: {fileID: 0}
-  LOrangeShirtOrangeFlowerAnim: {fileID: 0}
-  LYellowShirtOrangeFlowerAnim: {fileID: 0}
-  RWhiteShirtOrangeFlowerAnim: {fileID: 0}
-  RRedShirtOrangeFlowerAnim: {fileID: 0}
-  ROrangeShirtOrangeFlowerAnim: {fileID: 0}
-  RYellowShirtOrangeFlowerAnim: {fileID: 0}
-  DWhiteShirtYellowFlowerAnim: {fileID: 0}
-  DRedShirtYellowFlowerAnim: {fileID: 0}
-  DOrangeShirtYellowFlowerAnim: {fileID: 0}
-  DYellowShirtYellowFlowerAnim: {fileID: 0}
-  UWhiteShirtYellowFlowerAnim: {fileID: 0}
-  URedShirtYellowFlowerAnim: {fileID: 0}
-  UOrangeShirtYellowFlowerAnim: {fileID: 0}
-  UYellowShirtYellowFlowerAnim: {fileID: 0}
-  LWhiteShirtYellowFlowerAnim: {fileID: 0}
-  LRedShirtYellowFlowerAnim: {fileID: 0}
-  LOrangeShirtYellowFlowerAnim: {fileID: 0}
-  LYellowShirtYellowFlowerAnim: {fileID: 0}
-  RWhiteShirtYellowFlowerAnim: {fileID: 0}
-  RRedShirtYellowFlowerAnim: {fileID: 0}
-  ROrangeShirtYellowFlowerAnim: {fileID: 0}
-  RYellowShirtYellowFlowerAnim: {fileID: 0}
-  DWhiteShirtHatAnim: {fileID: 0}
-  DRedShirtHatAnim: {fileID: 0}
-  DOrangeShirtHatAnim: {fileID: 0}
-  DYellowShirtHatAnim: {fileID: 0}
-  UWhiteShirtHatAnim: {fileID: 0}
-  URedShirtHatAnim: {fileID: 0}
-  UOrangeShirtHatAnim: {fileID: 0}
-  UYellowShirtHatAnim: {fileID: 0}
-  LWhiteShirtHatAnim: {fileID: 0}
-  LRedShirtHatAnim: {fileID: 0}
-  LOrangeShirtHatAnim: {fileID: 0}
-  LYellowShirtHatAnim: {fileID: 0}
-  RWhiteShirtHatAnim: {fileID: 0}
-  RRedShirtHatAnim: {fileID: 0}
-  ROrangeShirtHatAnim: {fileID: 0}
-  RYellowShirtHatAnim: {fileID: 0}
+  earnGold: {fileID: 8300000, guid: 6e2551b040380544fb559c267d38ed35, type: 3}
+  buyItem: {fileID: 8300000, guid: 90140fd16033abb448dc339a643cb8a3, type: 3}
+  failedBuy: {fileID: 8300000, guid: fe2aa9a0f0c5c1a4999a1f5c7c4f4735, type: 3}
+  equipItem: {fileID: 8300000, guid: c9f0285b2d0c3c144814808d5d3c508f, type: 3}

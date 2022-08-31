@@ -110,6 +110,9 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
                 equipedItems.Add(itemToEquip);
             }
         }
+
+        GameObject.Find("AudioManager").GetComponent<AudioSource>().clip = GameAssets.i.equipItem;
+        GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
         UpdateAnimations();
     }
 

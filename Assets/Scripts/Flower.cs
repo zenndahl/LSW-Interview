@@ -14,7 +14,8 @@ public class Flower : MonoBehaviour
             IPlayerInventory player = other.gameObject.GetComponent<IPlayerInventory>();
             player.AddGold(goldValue);
             player.CollectFlower(flowerType);
-            //play sound
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().clip = GameAssets.i.earnGold;
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
             transform.parent.GetComponent<FlowerSpawner>().SetFlower(false);
             Destroy(gameObject);
         }

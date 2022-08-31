@@ -52,8 +52,15 @@ public class UIShop : MonoBehaviour
             _shopCustomer.BoughtItem(itemType);
             shopItemTemplate.gameObject.GetComponent<Button>().onClick.RemoveListener(delegate { TryBuyItem(itemType, shopItemTemplate); });
             //shopItemTemplate.Find("HideUI").gameObject.SetActive(true);
+
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().clip = GameAssets.i.buyItem;
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
         }
-        //else activate visual/audio cue
+        else
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().clip = GameAssets.i.failedBuy;
+            GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
+        }
         
     }
 

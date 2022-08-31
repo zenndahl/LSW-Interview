@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using static Item;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -38,10 +39,16 @@ public class InventoryUI : MonoBehaviour
 
         foreach(Item.ItemType item in player.GetInventoryItems())
         {
-            CreateItemDisplay(item, Item.GetSprite(item), Item.GetName(item));
+            if(Item.GetName(item) != "NoAccessory")
+            {
+                CreateItemDisplay(item, Item.GetSprite(item), Item.GetName(item));
+            }
         }
+    }
 
-        Hide();
+    public void EquipItem()
+    {
+        _playerInventory.EquipItem(Item.ItemType.NoAccessory);
     }
 
     private void CreateItemDisplay(Item.ItemType itemType, Sprite itemSprite, string itemName)
