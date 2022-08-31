@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -98,12 +99,73 @@ public class PlayerController : MonoBehaviour, IShopCustomer, IPlayerInventory
             {
                 equipedItems.Remove(item);
                 equipedItems.Add(itemToEquip);
+                UpdateAnimations();
             }
             else if (equipedItems.Count < 2)
             {
                 equipedItems.Add(itemToEquip);
             }
         }
+    }
+
+    private void UpdateAnimations()
+    {
+        Item.ItemType accessory = Item.ItemType.NoAccessory;
+        Item.ItemType outfit = Item.ItemType.WhiteShirt;
+
+        int shirt = 0;
+        int hat = 0;
+
+        foreach (Item.ItemType item in equipedItems)
+        {
+            //the player can only have 2 items, 1 outfit (shirt) and 1 accessory (headpiece)
+            if (Item.GetLabel(item) == "Accessory")
+            {
+                accessory = item;
+            }
+            else if(Item.GetLabel(item) == "Outfit")
+            {
+                outfit = item;
+            }
+        }
+
+        switch (accessory)
+        {
+            case Item.ItemType.NoAccessory: hat = 0;
+                break;
+            case Item.ItemType.FlowersCirclet: hat = 4;
+                break;
+            case Item.ItemType.RedFlowerCirclet: hat = 3;
+                break;
+            case Item.ItemType.YellowFlowerCirclet: hat = 1;
+                break;
+            case Item.ItemType.OrangeFlowerCirclet: hat = 2;
+                break;
+            case Item.ItemType.FarmerHat:
+                break;
+            default: hat = 0;
+                break;
+        }
+
+        switch (outfit)
+        {
+            case Item.ItemType.WhiteShirt: shirt = 0;
+                break;
+            case Item.ItemType.RedShirt: shirt = 3;
+                break;
+            case Item.ItemType.YellowShirt: shirt = 1;
+                break;
+            case Item.ItemType.OrangeShirt: shirt = 2;
+                break;
+            default: shirt = 0;
+                break;
+        }
+
+        if (shirt == 0 && outfit == 0)
+        {
+            //disable other animations bools
+            _animator.SetBool("Default", true);
+        } 
     }
 
     public void CollectFlower(int flowerType)
